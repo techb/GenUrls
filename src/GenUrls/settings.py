@@ -7,32 +7,30 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+from . import crawl_config
+
 BOT_NAME = 'GenUrls'
 
 SPIDER_MODULES = ['GenUrls.spiders']
 NEWSPIDER_MODULE = 'GenUrls.spiders'
 
 # Desired file format
-FEED_FORMAT = "json"
-#FEED_FORMAT = "csv"
+#FEED_FORMAT = "json"
+FEED_FORMAT = crawl_config.FEED_FORMAT
 
 # Name of the file where
 # data extracted is stored
-FEED_URI = "GenUrls_data.json"
-#FEED_URI = "GenUrls_data.csv"
+#FEED_URI = "GenUrls_data.json"
+FEED_URI = crawl_config.FEED_URI
 
 # The log level Scrapy outputs
-#LOG_LEVEL = 'CRITICAL'
-LOG_LEVEL = 'ERROR'
-#LOG_LEVEL = 'WARNING'
-#LOG_LEVEL = 'INFO'
-#LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = crawl_config.LOG_LEVEL
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'GenUrls (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = crawl_config.OBEY
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 32
