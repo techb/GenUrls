@@ -1,24 +1,25 @@
-from scrapy.spiders import Rule
-from scrapy.linkextractors import LinkExtractor
-
 # Allowed domains
 # Usually just the domain we're scraping
 #   to avoid crawling off-site links
 DOMAINS = [
-	'dev.kbcarte.com'
+    'kbcarte.com',
+    'dev.kbcarte.com'
 ]
 
 
 # Urls where the spider should start
 # A sitemap might be better served here
 ENTRYURLS = [
-	'https://dev.kbcarte.com'
+    'https://kbcarte.com',
+    'https://dev.kbcarte.com'
 ]
 
 
-# Blacklist snippits using regex
+# Blacklist using regex
 DENY = [
-	r'wp-login\.php',
+    r'wp-login\.php',
+    r'tel:',
+    r'mailto:',
 ]
 
 
@@ -28,32 +29,10 @@ LOG_LEVEL = 'ERROR'
 
 
 # What format and file name to save the results in
-FEED_FORMAT = 'csv'
-FEED_URI = 'RESULTS.csv'
+# csv and json available
+FEED_FORMAT = 'json'
+FEED_URI = 'RESULTS.json'
 
 
 # Obey what is in robots.txt
 OBEY = False
-
-
-# Empty LinkExtractor because we want all of them.
-# rules = (
-# 	Rule(
-# 		LinkExtractor(deny=crawl_config.DENY),
-# 		callback='parse_item',
-# 		follow=True
-# 	),
-# )
-
-# def build_allowed():
-# 	rule_instances = []
-# 	for i in ALLOW:
-# 		rule_instances.append(
-# 			Rule(
-# 				LinkExtractor(deny=DENY, allow=i),
-# 				callback='parse_item',
-# 				follow=True
-# 			)
-# 		)
-# 	print( tuple(rule_instances) )
-# 	return tuple(rule_instances)

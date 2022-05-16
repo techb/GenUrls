@@ -16,12 +16,12 @@ NEWSPIDER_MODULE = 'GenUrls.spiders'
 
 # Desired file format
 #FEED_FORMAT = "json"
-FEED_FORMAT = crawl_config.FEED_FORMAT
+# FEED_FORMAT = crawl_config.FEED_FORMAT
 
 # Name of the file where
 # data extracted is stored
 #FEED_URI = "GenUrls_data.json"
-FEED_URI = crawl_config.FEED_URI
+# FEED_URI = crawl_config.FEED_URI
 
 # The log level Scrapy outputs
 LOG_LEVEL = crawl_config.LOG_LEVEL
@@ -50,34 +50,34 @@ CONCURRENT_REQUESTS = 32
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
+# DEFAULT_REQUEST_HEADERS = {
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 #   'Accept-Language': 'en',
-#}
+# }
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
+# SPIDER_MIDDLEWARES = {
 #    'GenUrls.middlewares.GenurlsProjectSpiderMiddleware': 543,
-#}
+# }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
+# DOWNLOADER_MIDDLEWARES = {
 #    'GenUrls.middlewares.GenurlsProjectDownloaderMiddleware': 543,
-#}
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
+# EXTENSIONS = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
+# }
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
+# ITEM_PIPELINES = {
 #    'GenUrls.pipelines.GenurlsProjectPipeline': 300,
-#}
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
