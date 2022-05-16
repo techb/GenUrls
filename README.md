@@ -11,7 +11,7 @@ No recurrsion limits and `CONCURRENT_REQUESTS` set to 32 by default.
 ---
 - Python3
 - venv :: `sudo apt install python3.8-venv`
-- [Scrapy](https://scrapy.org/) (handled in requirements.txt)
+- [Scrapy](https://scrapy.org/) :: handled in requirements.txt
 
 
 ## Install
