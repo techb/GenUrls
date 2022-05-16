@@ -10,7 +10,7 @@ No recurrsion limits and `CONCURRENT_REQUESTS` set to 32 by default.
 ## Requirements
 ---
 - Python3
-- venv
+- venv :: `sudo apt install python3.8-venv`
 - [Scrapy](https://scrapy.org/) (handled in requirements.txt)
 
 
@@ -20,7 +20,7 @@ No recurrsion limits and `CONCURRENT_REQUESTS` set to 32 by default.
 - `$ git clone git@github.com:techb/GenUrls.git`
 - `$ cd GenUrls`
 - `$ python3 -m venv venv`
-- `$ source venv/bin/active`
+- `$ source venv/bin/activate`
 - `(venv)$ pip install -r requirements.txt`
 
 
