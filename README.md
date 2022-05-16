@@ -15,9 +15,8 @@ No recurrsion limits and `CONCURRENT_REQUESTS` set to 32 by default.
 
 
 ## Install
-
-**Windows is assumed to be in WSL**
 ---
+**Windows users are assumed to be in WSL**
 - `$ git clone git@github.com:techb/GenUrls.git`
 - `$ cd GenUrls`
 - `$ python3 -m venv venv`
