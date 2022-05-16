@@ -1,8 +1,15 @@
 # GenUrls
-A python tool to crawl a website for all linked urls.
+A python tool to crawl a website for all _linked_ urls, similar to [ScreamingFrog](https://www.screamingfrog.co.uk/seo-spider/) but without the bloat.
+
+Will crawl the website and follow links found with-in the HTML. There is a config file to set domains, robot.txt obey, black listed urls, etc...
+
+There is no guarentee to find all pages/posts/urls on a website, if the page is not linked anywhere on the website, this bot will not find it (targeted marketing landing pages for example).
 
 If on Windows, it is assumed you are inside WSL.
 
+
+Spider based on [Scrapy's](https://scrapy.org/) 
+- [CrawlSpider class](https://docs.scrapy.org/en/latest/topics/spiders.html#scrapy.spiders.CrawlSpider)
 
 ## Requirements
 ---
@@ -20,21 +27,14 @@ If on Windows, it is assumed you are inside WSL.
 
 ## Settings
 ---
-- **`./scr/run_spider.py`** :: The entry point to the crawler has two lists that are passed as named arguments. Note that the `starturls` list has the http/s and the `domains` does not.
-  - `domains=['exampledomain.com'],`
-  - `starturls=['https://exampledomain.com'],`
-
-- **`./src/GenUrls/settings.py`** :: Scrapy settings for the crawler.
-  - `FEED_FORMAT` :: Format to save the crawled info to.
-    - `csv`
-    - `json` - Default
-  - `FEED_URI` :: Path and filename to save the crawled info.
-  - `LOG_LEVEL` :: Log level of information that is outputted to the console when ran.
-    - `CRITICAL`
-    - `ERROR` - Default
-    - `WARNING`
-    - `INFO`
-    - `DEBUG`
+- **`./scr/GenUrls/crawl_config.py`**
+  - **DOMAINS** :: allowed domains to crawl
+  - **ENTRYURLS** :: url where the spider starts
+  - **DENY** :: strings/urls/paths to blacklist
+  - **LOG_LEVEL** :: level of output in terminal when activly crawling
+  - **FEED_FORMAT** :: results file format `csv`, `json`
+  - **FEED_URI** :: path and file name of the results, defaults to same dir with `RESULTS` as name
+  - **OBEY** :: obey the robots.txt file, `False` will ignore it, `True` will obey
 
 
 ## Run
