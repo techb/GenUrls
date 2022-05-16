@@ -1,5 +1,4 @@
-import json
-import csv
+import json, csv
 from pprint import pprint
 from urllib.request import urljoin
 from scrapy.linkextractors import LinkExtractor

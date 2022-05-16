@@ -40,7 +40,13 @@ No recurrsion limits and `CONCURRENT_REQUESTS` set to 32 by default.
 ## Run
 ---
 - `(venv)$ cd src`
+- `(venv)$ vim GenUrls/crawl_config.py`
+  - update the config file, save and exit
 - `(venv)$ python run_spider.py`
+- Output will be in your chosen format
+  - **start_url** :: the found url, in case of redirect this is the url that has been redirected
+  - **redirect** :: the final redirected url, will be null/None if no redirects happened
+  - **status** :: HTTP status code of the **start_url**
 
 
 ## Dev
