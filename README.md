@@ -20,7 +20,7 @@ No recurrsion limits and `CONCURRENT_REQUESTS` set to 32 by default.
 - `$ cd GenUrls`
 - `$ python3 -m venv venv`
 - `$ source venv/bin/active`
-- `$ pip install -r requirements.txt`
+- `(venv)$ pip install -r requirements.txt`
 
 
 ## Settings
