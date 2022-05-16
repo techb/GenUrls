@@ -2,20 +2,21 @@ from six.moves.urllib.parse import urljoin
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-from ..crawl_config import DOMAINS, ENTRYURLS, DENY
+from .. import crawl_config
 from scrapy.utils.python import to_native_str
 
 class GenUrlsBot(CrawlSpider):
     name = 'genurls'
-    allowed_domains = DOMAINS
-    start_urls = ENTRYURLS
+    allowed_domains = crawl_config.DOMAINS
+    start_urls = crawl_config.ENTRYURLS
     handle_httpstatus_list = [301, 302, 404, 200]
     crawled_data = []
+
 
     # Empty LinkExtractor because we want all of them.
     rules = (
         Rule(
-            LinkExtractor(deny=DENY),
+            LinkExtractor(deny=crawl_config.DENY),
             callback='parse_item',
             follow=True
         ),
@@ -26,6 +27,7 @@ class GenUrlsBot(CrawlSpider):
         start_url =  response.request.url
         redir_url =  None
 
+        # Yoink: https://stackoverflow.com/a/39788550/5182044
         # handle redirection
         # this is copied/adapted from RedirectMiddleware
         if response.status >= 300 and response.status < 400:
